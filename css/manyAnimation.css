@@ -1,0 +1,184 @@
+@charset "utf-8";
+body{
+	font-size:14px;
+	color:#333;
+	font-family:"microsoft yahei",Arial;	
+}
+html,body,div,p,a,b,button,form,i,table,thead,tr,td,th,tbody,ul,li,ol,dl,dt,dd,input,pre,select,img,caption,fieldset,header,footer,aside,article,
+h1,h2,h3,h4,h5,h6{
+	margin:0px;
+	padding:0px;
+	vertical-align:baseline;
+	font:inherit;
+	border:0px;
+}
+.container{
+	margin:0px auto;
+	padding:1px 10px;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	-ms-box-sizing:content-box;
+	-o-box-sizing:content-box;
+	box-sizing:content-box;
+}
+.wrap{
+	display:block;
+	margin:20px auto;
+	border:1px solid #ccc;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	min-height:200px;
+	overflow:hidden;
+}
+.wrap .title{
+	font-size:20px;
+	line-height:30px;
+	font-weight:bold;
+	text-align:center;
+	display:block;
+}
+.wrap .typeAni1,.wrap .typeAni2,.wrap .typeAni3,.wrap .typeAni4{
+	width:100px;
+	height:100px;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color:#c00;
+	cursor:pointer;
+}
+.wrap .typeAni1{
+	-webkit-transition:all 1s;
+	-moz-transition:all 1s;
+	-ms-transition:all 1s;
+	-o-transition:all 1s;
+	transition:all 1s;
+}
+.wrap .typeAni1:hover{
+	width:300px;
+}
+.wrap .typeAni2{
+	-webkit-animation:_move1 2s linear 1s infinite normal;
+}
+/*动画样式处理*/
+@-webkit-keyframes _move1{
+	0%{
+		width:100px;
+	}
+	50%{
+		width:300px;
+	}
+	100%{
+		width:100px;
+	}
+}
+@-moz-keyframes _move1{
+	0%{
+		width:100px;
+	}
+	50%{
+		width:300px;
+	}
+	100%{
+		width:100px;
+	}
+}
+@-ms-keyframes _move1{
+	0%{
+		width:100px;
+	}
+	50%{
+		width:300px;
+	}
+	100%{
+		width:100px;
+	}
+}
+@-o-keyframes _move1{
+	0%{
+		width:100px;
+	}
+	50%{
+		width:300px;
+	}
+	100%{
+		width:100px;
+	}
+}
+@keyframes _move1{
+	0%{
+		width:100px;
+	}
+	50%{
+		width:300px;
+	}
+	100%{
+		width:100px;
+	}
+}
+@media (min-width:1220px){
+	.container{
+		width:1200px;
+	}
+}
+@media (max-width:480px){
+	.wrap .typeAni1:hover{
+		width:200px;
+	}
+	@-webkit-keyframes _move1{
+		0%{
+			width:100px;
+		}
+		50%{
+			width:200px;
+		}
+		100%{
+			width:100px;
+		}
+	}
+	@-moz-keyframes _move1{
+		0%{
+			width:100px;
+		}
+		50%{
+			width:200px;
+		}
+		100%{
+			width:100px;
+		}
+	}
+	@-ms-keyframes _move1{
+		0%{
+			width:100px;
+		}
+		50%{
+			width:200px;
+		}
+		100%{
+			width:100px;
+		}
+	}
+	@-o-keyframes _move1{
+		0%{
+			width:100px;
+		}
+		50%{
+			width:200px;
+		}
+		100%{
+			width:100px;
+		}
+	}
+	@keyframes _move1{
+		0%{
+			width:100px;
+		}
+		50%{
+			width:200px;
+		}
+		100%{
+			width:100px;
+		}
+	}
+}
