@@ -28,17 +28,24 @@ JavascriptAnimation.prototype = {
 		this.wrap = (typeof id === "string")?document.getElementById(id):id;
 		this.list = this.wrap.getElementsByClassName("typeAni4");
 		this.durationTime = 1000;
-		this.primaryWidth = this.list[0].offsetWidth;
+		this._width =  this.list[0].offsetWidth;
 		this.lastWidth = 300;
-		this.distance = (this.lastWidth - this.primaryWidth);
+		this.distance = (this.lastWidth - this.primaryWidth); 
 		this.changeSpeed = this.distance / this.durationTime;
 		for(var i = 0,len = this.list.length;i<len;i++){
 			(function(n){
-				var clearIntervalId = null;
-				clearInterval(clearIntervalId);
+				var clearIntervalId1 = null;
+				clearInterval(clearIntervalId1);
+				var clearIntervalId2 = null;
+				clearInterval(clearIntervalId2);
 				_that.list[n].onmouseover = function(){
 					clearIntervalId = setInterval(function(){
 						_that.rightMove.call(_that,_that.list[n]);
+					},1);
+				};
+				_that.list[n].onmouseout = function(){
+					clearIntervalId2 = setInterval(function(){
+						_that.leftMove.call(_that,_that.list[n]);
 					},1);
 				};
 			})(i);
@@ -46,11 +53,22 @@ JavascriptAnimation.prototype = {
 	},
 	rightMove : function(dom){
 		var _that = this;
-		this.primaryWidth += this.changeSpeed;
-		if(this.primaryWidth<=this.lastWidth){
+		var primaryWidth = this._width;
+		primaryWidth += this.changeSpeed;
+		if(primaryWidth<=this.lastWidth){
 			dom.style.width = this.primaryWidth + 'px';
 		}else{
 			dom.style.width  = this.lastWidth + 'px';
+		};
+	},
+	leftMove : function(dom){
+		var _that = this;
+		var primaryWidth = this._width;
+		primaryWidth -= this.clangeSpeed;
+		if(primaryWidth >= this._width){
+			dom.style.width = this.primaryWidth + 'px';
+		}else{
+			dom.style.width = this._width + 'px';
 		};
 	}
 }
